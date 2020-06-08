@@ -4506,23 +4506,23 @@
           })
           .join('');
         gallery.innerHTML = html;
+
+        const viewButtons = document.querySelectorAll('.viewButton');
+        viewButtons.forEach((viewButton) => viewButton.addEventListener('click', handleViewClick));
+
+        const growVertButtons = document.querySelectorAll('.growVertButton');
+        growVertButtons.forEach((growVertButton) => growVertButton.addEventListener('click', growImageVert));
+        const shrinkVertButtons = document.querySelectorAll('.shrinkVertButton');
+        shrinkVertButtons.forEach((shrinkVertButton) => shrinkVertButton.addEventListener('click', shrinkImageVert));
+        const growHorButtons = document.querySelectorAll('.growHorButton');
+        growHorButtons.forEach((growHorButton) => growHorButton.addEventListener('click', growImageHor));
+        const shrinkHorButtons = document.querySelectorAll('.shrinkHorButton');
+        shrinkHorButtons.forEach((shrinkHorButton) => shrinkHorButton.addEventListener('click', shrinkImageHor));
+
+        document.addEventListener('click', closeIfOpen);
       };
 
       prepareHtml();
-
-      const viewButtons = document.querySelectorAll('.viewButton');
-      viewButtons.forEach((viewButton) => viewButton.addEventListener('click', handleViewClick));
-
-      const growVertButtons = document.querySelectorAll('.growVertButton');
-      growVertButtons.forEach((growVertButton) => growVertButton.addEventListener('click', growImageVert));
-      const shrinkVertButtons = document.querySelectorAll('.shrinkVertButton');
-      shrinkVertButtons.forEach((shrinkVertButton) => shrinkVertButton.addEventListener('click', shrinkImageVert));
-      const growHorButtons = document.querySelectorAll('.growHorButton');
-      growHorButtons.forEach((growHorButton) => growHorButton.addEventListener('click', growImageHor));
-      const shrinkHorButtons = document.querySelectorAll('.shrinkHorButton');
-      shrinkHorButtons.forEach((shrinkHorButton) => shrinkHorButton.addEventListener('click', shrinkImageHor));
-
-      document.addEventListener('click', closeIfOpen);
 
       // // https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
       // // https://www.npmjs.com/package/gifencoder
